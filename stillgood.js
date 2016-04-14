@@ -1,23 +1,34 @@
-if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
+Options = new Mongo.Collection('options');
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
+if(Meteor.isClient){
+  
+  Template.optionList.helpers({
+      'option': function(){
+          return Options.find();
+      }
+  });
+
+
+  
+  Template.addOptions.events({
+      'submit form': function(event){
+          event.preventDefault();
+          Options.insert({
+              name: event.target.optionName.value,
+              url: event.target.optionURL.value
+          });
+          event.target.playerName.value = "";
+          event.target.optionURL.value = "";          
+      }
+  });
+  
+  Template.modal.events({
+    'click .myBtn': function(){
+      $(".modal").css('display', 'block');
+    },
+    'click .close': function(){
+      $(".modal").css('display', 'none');
     }
   });
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
-}
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
 }

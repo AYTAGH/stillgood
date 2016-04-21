@@ -2,9 +2,12 @@
 <title>Is It Still Good?</title>
 </head>
 <body>
+{{> frontHome}}
+{{> optionList}}
 {{> modal}}
+</body>
 
-<div class="front">
+<template name="frontHome"> 
     <div class="front-top">
         <h1>Is</h1>
     </div>
@@ -12,41 +15,42 @@
         <h1 class="left">Still</h1>
         <h1 class="right">Good</h1>
     </div>
-</div>
-
-<ul class="front-list">
-    <li><h2>'Til 2016</h2><h1>Earth</h1></li>
-    <li><h2>'Til 2016</h2><h1>Lorem Ipsum Dolor</h1></li>
-    <li><h2>'Til 2016</h2><h1>Hello Hello</h1></li>
-    <li><h2>'Til 2016</h2><h1>Earth</h1></li>
-    <li><h2>'Til 2016</h2><h1>Earth</h1></li>
-    <li><h2>'Til 2016</h2><h1>Lorem Ipsum Dolor</h1></li>
-    <li><h2>'Til 2016</h2><h1>Hello Hello</h1></li>
-    <li><h2>'Til 2016</h2><h1>Earth</h1></li>    
-</ul>
-
-
-</body>
-
-<template name="addOptions">
-    <form>
-        <input type="text" name="optionName" placeholder="Add a subject?">
-        <input type="text" name="optionURL" placeholder="IMG URL">        
-        <input type="submit" value="Submit">
-    </form>  
 </template>
 
 <template name="optionList">
-  <ul class="option-images">
-  {{#each option}}
-      <li>
-        <img src="{{url}}">
-        <h2>{{name}}</h2>
-        <form>
-            <input type="text" name="prediction" placeholder="Until when?">        
-            <input type="submit" value="Add to Predictions">
-        </form>       
-      </li>
-  {{/each}}
+<div class="front-list">  
+  <ul class="mainList">
+    {{#each option}}
+        <li>
+          <h2>'Til {{guessdate}}</h2>
+          <h1><a href="{{url}}" target="_blank">{{name}}</a></h1>
+        </li>
+    {{/each}}
   </ul>
+</div>
+</template>
+
+<template name="modal">
+<header>
+<button class="myBtn">Is it still good?</button>
+</header>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">×</span>
+    <div class="modal-header">
+      <h2>Add What is still good to Inventory:</h2>
+      <form>
+        <input type="text" name="optionName" placeholder="What is still good?">
+        <input type="text" name="optionURL" placeholder="Source URL">
+        <input type="text" name="optionDate" placeholder="Date"> 
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+      <ul>
+      {{#each option}}
+          <li><h3>{{guessdate}}:<a href="{{url}}" target="_blank">{{name}}</a>:username:{{date}}</h3></li>
+      {{/each}}
+      </ul>
+  </div>
+</div>
 </template>

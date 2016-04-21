@@ -1,23 +1,52 @@
 body{
     font-family: helvetica, sans-serif;
+    background-color: rgb(0,0,0);
+    color:rgb(255,255,255);
 }
 
 header{
     width:100%;
     background-color: transparent;
     position:fixed;
+    bottom:0;
     z-index: 100;
     padding:20px;
 }
 
-header .myBtn {
-    margin:0px auto;
-    display: block;
+.front-top{
+    position: fixed;
+    top:0;
+    right:0;
 }
+
+.front-bottom{
+    position:fixed;
+    left:0;bottom:0;right:0;
+    padding:30px;
+    background-color: rgb(255,255,255); /* For browsers that do not support gradients */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(0,0,0,1) 5%);
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,1) 5%);
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(0,0,0,1) 5%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#000000',GradientType=0 );
+}
+.front-bottom h1{width:100%;}
+.front-bottom .left {text-align: left;}
+.front-bottom .right {text-align: right;}
+
+.front-list{
+    margin-right: 200px;
+    padding:50px 30px 600px 30px;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
 
 h1{
     font-family: AntiqueOliveStd-BoldCond;
-    color: rgb(255,30,0);
+    color: rgb(255,255,255);
+    /*text-shadow: 0 0 2px rgba(0,0,255,0.9);*/
     letter-spacing: -1px;
     word-spacing: -7px;
     font-size: 180px;
@@ -25,68 +54,116 @@ h1{
     text-transform: uppercase;
 }
 
-.front-top{
-    position: fixed;
-    left:0;
-    right:0;
-    padding: 50px 30px 0 30px;
-}
-
-.front-top h1{
-    width:100%;
-    text-align: right;
-}
-
-.front-bottom{
-    position:fixed;
-    left:0;
-    bottom:0;
-    right:0;
-    padding:0 30px 30px 30px;
-    background: rgb(255,255,255); /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(rgba(255,0,0,0), rgb(255,255,255) 20%); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(rgba(255,0,0,0), rgb(255,255,255) 20%); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(rgba(255,0,0,0), rgb(255,255,255) 20%); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(rgba(255,0,0,0), rgb(255,255,255) 20%); /* Standard syntax (must be last) */    
-}
-
-.front-bottom h1{
-    width:100%;
-}
-
-.front-bottom h1:nth-child(1) {
-    padding-top: 200px; 
-}
-
-.front-bottom h1:nth-child(2) {
-    text-align: right;
-}
-
-.front-list{
-    margin-right: 200px;
-    padding:50px 30px 0px 30px;
-}
-
-.front-list h1, .front-list h2{
-    display:block;
-}
-
-.front-list h2 {
+h2{
     font-family: Executive-Book;
+    color: rgb(255,255,255);
     font-size: 22px;
 }
 
-.option-images li{
-    background-color:green;
-    
+h3{
+    font-family: Executive-Book;
+    color: rgb(0,0,0);
+    font-size: 14px; 
 }
 
-.option-images li img{
-    width:80%;
+/* ==========================================================================
+   modal
+   ========================================================================== */
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: rgb(255,255,255);
+    margin: auto;
+    padding: 20px;
+    width: 50%;
+}
+
+.modal-header{
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid rgb(0,0,255);
+}
+
+
+
+
+/* ==========================================================================
+   Form &  Buttons
+   ========================================================================== */
+
+form input {
     display:block;
-    margin: 0px auto;
+    width: 200px;
+    margin:0px auto;
 }
 
-.option-images li h2{
-    text-align: center;
+.myBtn {
+    margin:0px auto;
+    display: block;
+}
+
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   clearfix/float
+   ========================================================================== */
+
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+.left{float:left;}
+.right{float:right;}
+
+
+/* ==========================================================================
+   clearfix/float
+   ========================================================================== */
+
+a {
+    color:inherit;
+    text-decoration: none;
+}
+
+a:hover{
+    color:red;
+}
+
+/* ==========================================================================
+   list
+   ========================================================================== */
+   
+.mainList{
+    
 }

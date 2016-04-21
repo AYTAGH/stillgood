@@ -114,12 +114,3 @@ table {
     font-family: AntiqueOliveStd-Light;
     src: url(font/AntiqueOliveStd-Light.otf);
 }
-
-
-.clearfix {
-  overflow: auto;
-  zoom: 1;
-}
-
-.left{float:left;}
-.right{float:right;}
